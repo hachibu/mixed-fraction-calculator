@@ -1,0 +1,18 @@
+{
+  "name": "mixed-fraction-calculator",
+  "version": "0.1.0",
+  "license": "MIT",
+  "bin": {
+    "mixed-fraction-calculator": "./bin/run"
+  },
+  "dependencies": {
+    "@types/mathjs": "6.0.4",
+    "@types/node": "13.7.0",
+    "mathjs": "6.6.0",
+    "typescript": "3.7.5",
+    "yargs": "15.1.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

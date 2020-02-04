@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+var yargs = require('yargs');
+var { evaluate } = require('../dist/Main');
+var argv = yargs.usage(
+    '$0 <expr>',
+    'Evaluate an expression as a mixed fraction.',
+    (yargs) => yargs.positional('expr', { type: 'string' })
+  )
+  .argv;
+
+console.log(evaluate(argv.expr));
