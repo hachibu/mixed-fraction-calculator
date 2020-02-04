@@ -1,25 +1,21 @@
 export class MixedFraction {
-  whole: number;
-  numerator: number;
-  denominator: number;
+  w: number;
+  n: number;
+  d: number;
 
-  constructor(
-    whole: number = 0,
-    numerator: number = 0,
-    denominator: number = 0
-  ) {
-    this.whole = whole;
-    this.numerator = numerator;
-    this.denominator = denominator;
+  constructor(w: number = 0, n: number = 0, d: number = 0) {
+    this.w = w;
+    this.n = n;
+    this.d = d;
   }
 
   toString() {
-    if (this.numerator === 0) {
-      return `${this.whole}`;
-    } else if (this.whole === 0) {
-      return `${this.numerator}/${this.denominator}`;
+    if (this.n === 0) {
+      return `${this.w}`;
+    } else if (this.w === 0) {
+      return `${this.n}/${this.d}`;
     } else {
-      return `${this.whole} ${this.numerator}/${this.denominator}`;
+      return `${this.w} ${this.n}/${this.d}`;
     }
   }
 }

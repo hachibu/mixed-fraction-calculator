@@ -5,23 +5,23 @@ function isFraction(object: any): object is math.Fraction {
   return 'n' in object && 'd' in object;
 }
 
-function rewriteExpr(expr: string): string {
-  return expr.replace(/(\d+)\s(\d+\/\d+)/g, '($1 + $2)');
+function rewrite(expr: string): string {
+  return expr.replace(/(\d+)\s+(\d+\/\d+)/g, '($1 + $2)');
 }
 
 export function evaluate(expr: string): string {
-  let e = rewriteExpr(expr);
+  let e = rewrite(expr);
   let v = math.evaluate(e);
   let f = math.fraction(v);
   let m = new MixedFraction();
 
   if (isFraction(f)) {
-    m.numerator = f.n;
-    m.denominator = f.d;
+    m.n = f.n;
+    m.d = f.d;
 
-    if (m.numerator >= m.denominator) {
-      m.whole = math.floor(m.numerator / m.denominator);
-      m.numerator -= m.whole * m.denominator;
+    if (m.n >= m.d) {
+      m.w = math.floor(m.n / m.d);
+      m.n -= m.w * m.d;
     }
   }
 
